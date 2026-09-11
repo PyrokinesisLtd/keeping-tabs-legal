@@ -107,7 +107,7 @@
   <header>
     <div class="label">Pyrokinesis Ltd</div>
     <h1>Keeping Tabs privacy policy</h1>
-    <p class="meta">Version 1.0 · effective 7 September 2026</p>
+    <p class="meta">Version 1.1 · effective 11 September 2026</p>
   </header>
 
   
@@ -116,8 +116,9 @@
 
   <div class="summary">
     <p>The short version.</p>
-    <p>Your food diary is stored on your phone and is never uploaded. We cannot read it. What leaves your device is the name and email address your sign-in provider gives us, so that one account can reach your other devices — and, only if you say yes, your address for occasional emails about the app.</p>
-    <p>There is no advertising, no analytics, no tracking, and no third party is paid for anything you do here.</p>
+    <p>Your food diary is stored on your phone and is never uploaded. We cannot read it — not what you eat, not what you weigh, not your goals. We never see any of it, because none of it ever reaches us.</p>
+    <p>There is no account and nothing to sign in to, so we do not have your name or your email address. The only things the app sends are a barcode, when you scan a packet the app does not already know, and — unless you switch it off — anonymous counts of which parts of the app get used. Neither includes anything you record, and neither identifies you.</p>
+    <p>There is no advertising, no tracking and no mailing list, and nothing about you is sold or shared. You pay once, and that is the whole of the arrangement.</p>
   </div>
 
   <h2><span class="n">1</span> What stays on your phone</h2>
@@ -126,7 +127,7 @@
   <p>You can take a copy at any time: the app exports your diary as CSV or JSON, and the file goes wherever you send it.</p>
 
   <h2><span class="n">2</span> What leaves your phone</h2>
-  <p>Four things, and nothing else.</p>
+  <p>Two things, and nothing else.</p>
   <div class="table-wrap">
     <table>
       <thead>
@@ -134,44 +135,32 @@
       </thead>
       <tbody>
         <tr>
-          <td>Name, email address, account identifier</td>
-          <td>Google Firebase Authentication</td>
-          <td>To identify your account so your diary can reach a second device</td>
-          <td>When you sign in</td>
-        </tr>
-        <tr>
-          <td>Your mailing-list answer</td>
-          <td>Google Firestore</td>
-          <td>To record whether you agreed to be emailed, and to honour it</td>
-          <td>Only after you are asked, whichever way you answer</td>
-        </tr>
-        <tr>
           <td>A barcode</td>
           <td>Open Food Facts</td>
           <td>To look up a product the catalogue in the app does not hold</td>
           <td>Only on a scan that finds nothing, and only if the setting is on</td>
         </tr>
         <tr>
-          <td>A request for your profile picture</td>
-          <td>Google</td>
-          <td>To show the picture your provider already holds for you</td>
-          <td>Once, if you signed in with Google and have no picture set</td>
+          <td>Anonymous usage counts</td>
+          <td>TelemetryDeck</td>
+          <td>To learn which parts of the app get used and what goes wrong, so we know what to fix and what to make easier</td>
+          <td>As you use the app, unless you switch it off</td>
         </tr>
       </tbody>
     </table>
   </div>
 
-  <h3>Your account</h3>
-  <p>You sign in with Apple, with Google, or with an email address and password. Your provider gives us a stable identifier and, where you permit it, your name and email address. Sign in with Apple can give a private relay address instead of your real one, and that works exactly as well here.</p>
-  <p>Your name is used to fill in your profile so you do not have to type it, and to draw the initial on your avatar. Your email address identifies your account and, where a password is used, is how you sign in.</p>
+  <h3>No account</h3>
+  <p>There is nothing to sign up for and nothing to sign in to. The name, date of birth, sex, height and weight the app asks for when you first open it are stored on your phone with the rest of your diary, and never sent anywhere. Every one of them can be left blank. We do not have your email address, and there is no mailing list.</p>
 
-  <h3>The mailing list</h3>
-  <p>You are asked once whether you would like occasional email about the app. The answer is no unless you say otherwise. Whichever way you answer, we record: your account identifier, your email address, your answer, the date, the exact wording you were shown and its version, where in the app you were asked, your locale region, and the app version. We keep the wording because an agreement to something you cannot see afterwards is not much of an agreement, and because we may have to show that consent was properly obtained.</p>
-  <p>You can change your answer at any time in the app, and every marketing email carries an unsubscribe link.</p>
+  <h3>Usage counts</h3>
+  <p>Unless you switch it off, the app counts which of its features get used and sends those counts to TelemetryDeck, an analytics service. A count says which control was used — a food added by scanning rather than searching, a weigh-in recorded, a screen opened — and never what was chosen with it. It also counts when something goes wrong — a barcode lookup that could not reach Open Food Facts, a purchase that did not go through, a label that could not be read — by the kind of problem only, never with the message or anything you were doing. It never contains the name of a food, an amount, a weight, a target, a barcode, anything from Apple Health, or anything else you record.</p>
+  <p>Counts are not linked to you. They carry a random identifier created on your device for this one purpose, hashed before it leaves, and connected to nothing else. TelemetryDeck also receives the technical details needed to break counts down: app and iOS version, device model, language, region, accessibility settings, the time of day, and how often the app has been opened.</p>
+  <p>You can switch this off with <em>Share analytics</em>, under <em>You → Privacy</em>. Doing so stops the counting entirely and discards the identifier, so switching it back on starts afresh and cannot be joined to anything before.</p>
 
   <h3>Barcode lookups</h3>
   <p>The app ships with a catalogue of food on the device, so most barcodes are answered without any connection at all. When a scan finds nothing there, the barcode — and only the barcode — is sent to Open Food Facts, an open database run by a French non-profit association. The request carries no account, no device identifier and no cookies, and the app refuses cookies in both directions. Open Food Facts will hold this in its server logs under its own policy.</p>
-  <p>This can be switched off in the app under <em>You → Scanning</em>. With it off, the app asks nothing of anybody.</p>
+  <p>This can be switched off in the Scanning section of <em>You → You</em>. With it off, the app asks nothing of anybody.</p>
 
   <h2><span class="n">3</span> What we never collect</h2>
   <ul>
@@ -179,7 +168,9 @@
     <li>Your location, at any precision.</li>
     <li>Your contacts, photos, calendar or files. The app can read a photograph of a nutrition label, which it processes on the device and does not upload.</li>
     <li>Advertising identifiers. There is no advertising in this app and no advertising SDK in it.</li>
-    <li>Analytics of any kind. There is no analytics or crash-reporting SDK in the app, so we do not know which screens you open or whether it crashed.</li>
+    <li>Anything identifying in the usage counts. They say which features were used and never what you recorded, and they are not linked to you.</li>
+    <li>Your name or your email address. There is no account and no mailing list.</li>
+    <li>Crash reports from the app itself. There is no crash-reporting SDK in it. If you have chosen in iOS Settings to share analytics with app developers, Apple may pass us anonymised crash data, under Apple's own policy.</li>
   </ul>
   <p>We do not track you across other apps or websites, and we do not share, sell or rent anything to anyone for their own purposes.</p>
 
@@ -195,35 +186,31 @@
 
   <h2><span class="n">7</span> Who processes data for us</h2>
   <ul>
-    <li><strong>Google (Firebase Authentication and Firestore)</strong> — holds your account record and your mailing-list answer, as our processor.</li>
-    <li><strong>Apple</strong> — operates Sign in with Apple and the App Store, as an independent controller under its own privacy policy.</li>
+    <li><strong>TelemetryDeck</strong> — receives the anonymous usage counts described in section 2, as our processor.</li>
+    <li><strong>Apple</strong> — operates the App Store and handles the purchase, as an independent controller under its own privacy policy.</li>
     <li><strong>Open Food Facts</strong> — receives barcode lookups as described in section 2, as an independent controller under its own policy.</li>
-    <li>No third-party email service is used at present: the mailing list is held in Firestore and nothing has been sent from it. If that changes, this policy will name the provider before the first message goes out.</li>
   </ul>
 
   <h2><span class="n">8</span> Legal bases, and how long we keep things</h2>
   <p>Under UK and EU GDPR, which apply to people using the app in those places, we rely on:</p>
   <ul>
-    <li><strong>Contract</strong> — your account record. We cannot give you an account that works across devices without one.</li>
-    <li><strong>Consent</strong> — the mailing list, the barcode lookup setting, and Apple Health access. Each is asked for separately and each can be withdrawn without affecting the rest.</li>
-    <li><strong>Legitimate interests</strong> — keeping a record of your mailing-list answer, including a refusal, so that we can honour it and demonstrate it.</li>
+    <li><strong>Consent</strong> — the barcode lookup setting and Apple Health access. Each is asked for separately and each can be withdrawn without affecting the rest.</li>
+    <li><strong>Legitimate interests</strong> — counting, anonymously, which features get used, so that we can improve the app. You can object at any time by switching it off.</li>
   </ul>
-  <p>Your account record is kept for as long as you have an account. Your mailing-list record is kept while you have an account and for seven years after it is deleted, so that an unsubscribe cannot be lost. Anything on your phone is kept until you delete it or delete the app.</p>
+  <p>We keep no record about you. Usage counts are kept by TelemetryDeck in aggregate and are not linked to you. Anything on your phone is kept until you delete it or delete the app.</p>
 
   <h2><span class="n">9</span> Where data is held</h2>
-  <p>Firebase stores this data in Sydney, Australia (<span class="mono">australia-southeast1</span>), chosen when the database was created and fixed permanently at that point.</p>
-  <p>For people in New Zealand, Principle 12 of the Privacy Act 2020 permits disclosure to a foreign person or entity where that entity is subject to privacy safeguards comparable to the Act; Australia's Privacy Act 1988 provides them, and Google's terms bind it further.</p>
-  <p>For people in the United Kingdom or the European Economic Area, this is a transfer to a country without an adequacy decision, and it is covered by Google&rsquo;s Cloud Data Processing Addendum, which incorporates the European Commission&rsquo;s Standard Contractual Clauses and the UK Addendum to them.</p>
+  <p>Your diary is held on your phone, and in your phone's own backup if you use iCloud Backup or back up to a computer. We hold no personal information about you, so there is none for us to send to another country. Usage counts are held by TelemetryDeck in the European Union, and barcode lookups go to Open Food Facts in France.</p>
 
   <h2><span class="n">10</span> Children</h2>
   <p>Keeping Tabs is not directed at children and we do not knowingly collect personal data from anyone under 16. If you believe a child has given us data, write to us and we will delete it.</p>
 
-  <h2><span class="n">11</span> Deleting your account</h2>
-  <p>You can delete your account and everything held against it from inside the app, under <em>You → Account</em>. Deleting it removes your account record and your mailing-list record from our systems.</p>
-  <p>Signing out is separate and lighter: it clears the account from the device without deleting anything held for it. Deleting the app removes everything stored on the device, including your diary.</p>
+  <h2><span class="n">11</span> Deleting your data</h2>
+  <p>Everything is on your phone, so deleting it is in your hands. <em>Erase everything on this phone</em>, under <em>You</em>, removes your diary, your weights, your goals and your profile; deleting the app does the same. We hold nothing about you to delete.</p>
+  <p>Usage counts are not linked to you, so there is nothing of yours among them to find. Switching counting off discards the identifier they carried.</p>
 
   <h2><span class="n">12</span> Your rights</h2>
-  <p>Wherever you are, you may ask us for a copy of the personal data we hold about you, ask us to correct it, or ask us to delete it. Your diary is on your phone and the app can export it at any time without asking us.</p>
+  <p>We hold no personal data about you. Your diary is on your phone, and the app can export it at any time without asking us. Wherever you are, you may still write to ask what we hold, and to exercise any of the rights below.</p>
   <p><strong>New Zealand.</strong> You have rights of access and correction under the Privacy Act 2020, and may complain to the Office of the Privacy Commissioner at <a href="https://privacy.org.nz">privacy.org.nz</a>.</p>
   <p><strong>United Kingdom and European Economic Area.</strong> You have rights of access, rectification, erasure, restriction, portability and objection, and the right to withdraw consent at any time. You may complain to the UK Information Commissioner's Office at <a href="https://ico.org.uk">ico.org.uk</a>, or to your national supervisory authority in the EEA.</p>
   <p><strong>Australia.</strong> You have rights of access and correction under the Australian Privacy Principles, and may complain to the Office of the Australian Information Commissioner at <a href="https://oaic.gov.au">oaic.gov.au</a>.</p>
